@@ -28,7 +28,7 @@ export default function AscorynLogo({
     <div className={`inline-flex items-center gap-3 select-none ${className}`}>
       {/* SVG Icon Emblem */}
       <img
-        src="/logo1.png"
+        src="/new-logo.png"
         alt="Ascoryn Tech Logo"
         width={currentScale.iconSize * 1.5}
         height={currentScale.iconSize * 1.5}
