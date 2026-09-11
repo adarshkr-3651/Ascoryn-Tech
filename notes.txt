@@ -1,0 +1,6 @@
+✓ Logo updated to public/logo.png
+✓ Phone / WhatsApp numbers updated: +977 9762958887 / 9745653468
+✓ Email updated: ascoryntech@gmail.com
+✓ Website updated: https://ascoryntech.vercel.app
+✓ Multi-tab high-resolution QR Codes generated (Website, WhatsApp, vCard)
+✓ Theme switching, icons, metadata, and JSON-LD schema validated

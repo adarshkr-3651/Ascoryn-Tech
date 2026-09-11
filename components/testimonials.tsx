@@ -64,7 +64,7 @@ export default function TestimonialsSection() {
                     <div className="text-sm font-bold text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
                       {item.name}
                     </div>
-                    <div className="text-xs text-slate-500 dark:text-slate-400">{item.role}</div>
+                    {item.role && <div className="text-xs text-slate-500 dark:text-slate-400">{item.role}</div>}
                     <div className="text-[11px] font-semibold text-cyan-600 dark:text-cyan-300">{item.company}</div>
                   </div>
                 </div>

@@ -1,4 +1,3 @@
-'use me';
 import React from 'react';
 
 interface LogoProps {
@@ -16,23 +15,23 @@ export default function AscorynLogo({
 }: LogoProps) {
   // Dimensions scaling
   const scaleMap = {
-    sm: { height: 32, iconSize: 28, textClass: 'text-lg', sloganClass: 'text-[9px]' },
-    md: { height: 42, iconSize: 38, textClass: 'text-2xl', sloganClass: 'text-[11px]' },
-    lg: { height: 56, iconSize: 52, textClass: 'text-3xl', sloganClass: 'text-[13px]' },
-    xl: { height: 72, iconSize: 66, textClass: 'text-4xl', sloganClass: 'text-[15px]' },
+    sm: { height: 32, iconSize: 32, textClass: 'text-lg', sloganClass: 'text-[9px]' },
+    md: { height: 42, iconSize: 42, textClass: 'text-2xl', sloganClass: 'text-[11px]' },
+    lg: { height: 56, iconSize: 56, textClass: 'text-3xl', sloganClass: 'text-[13px]' },
+    xl: { height: 72, iconSize: 72, textClass: 'text-4xl', sloganClass: 'text-[15px]' },
   };
 
   const currentScale = scaleMap[size];
 
   return (
     <div className={`inline-flex items-center gap-3 select-none ${className}`}>
-      {/* SVG Icon Emblem */}
+      {/* Brand Logo Emblem */}
       <img
-        src="/new-logo.png"
+        src="/logo.png"
         alt="Ascoryn Tech Logo"
-        width={currentScale.iconSize * 1.5}
-        height={currentScale.iconSize * 1.5}
-        className="transition-transform duration-300 hover:scale-105 object-contain"
+        width={currentScale.iconSize}
+        height={currentScale.iconSize}
+        className="transition-transform duration-300 hover:scale-105 object-contain rounded-lg"
       />
 
       {/* Typography Section */}
@@ -52,3 +51,4 @@ export default function AscorynLogo({
     </div>
   );
 }
+

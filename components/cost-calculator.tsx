@@ -17,12 +17,12 @@ export default function CostCalculator() {
     }
   };
 
-  // Base Calculation Logic
+  // Base Calculation Logic (in NPR / Rs.)
   const goalRates = {
-    ai: { base: 12000, label: 'AI Agent & LLM Automation', roi: '350% Efficiency Increase' },
-    app: { base: 15000, label: 'Next.js Custom SaaS App', roi: '3x Speed to Market' },
-    cloud: { base: 18000, label: 'Cloud Architecture & DevOps', roi: '45% Infra Cost Cut' },
-    security: { base: 10000, label: 'Zero-Trust Cybersecurity Audit', roi: '100% Audit Compliance' },
+    ai: { base: 120000, label: 'AI Agent & LLM Automation', roi: '350% Efficiency Increase' },
+    app: { base: 150000, label: 'Next.js Custom SaaS App', roi: '3x Speed to Market' },
+    cloud: { base: 180000, label: 'Cloud Architecture & DevOps', roi: '45% Infra Cost Cut' },
+    security: { base: 100000, label: 'Zero-Trust Cybersecurity Audit', roi: '100% Audit Compliance' },
   };
 
   const tierMultipliers = {
@@ -38,16 +38,17 @@ export default function CostCalculator() {
   };
 
   const addonPrices: Record<string, { label: string; price: number }> = {
-    sre: { label: '24/7 SRE Monitoring & SLA', price: 2500 },
-    soc2: { label: 'SOC2 / ISO 27001 Audit Prep', price: 3500 },
-    rag: { label: 'Custom Fine-Tuned Vector RAG', price: 4000 },
-    dr: { label: 'Multi-Cloud Disaster Recovery', price: 3000 },
+    sre: { label: '24/7 SRE Monitoring & SLA', price: 25000 },
+    soc2: { label: 'SOC2 / ISO 27001 Audit Prep', price: 35000 },
+    rag: { label: 'Custom Fine-Tuned Vector RAG', price: 40000 },
+    dr: { label: 'Multi-Cloud Disaster Recovery', price: 30000 },
   };
 
   const basePrice = goalRates[goal].base * tierMultipliers[tier].mult * speedMultipliers[speed].mult;
   const addonsTotal = selectedAddons.reduce((sum, key) => sum + (addonPrices[key]?.price || 0), 0);
   const estimatedCostMin = Math.round((basePrice + addonsTotal) * 0.9);
   const estimatedCostMax = Math.round((basePrice + addonsTotal) * 1.15);
+
 
   return (
     <section id="calculator" className="py-24 bg-slate-50 dark:bg-[#050B16] relative overflow-hidden transition-colors duration-300">
@@ -191,10 +192,11 @@ export default function CostCalculator() {
               <div className="bg-slate-950/90 p-5 rounded-xl border border-cyan-500/30">
                 <div className="text-xs text-slate-400 mb-1">Estimated Budget Range</div>
                 <div className="text-3xl sm:text-4xl font-extrabold text-lime-400">
-                  ${estimatedCostMin.toLocaleString()} - ${estimatedCostMax.toLocaleString()}
+                  Rs. {estimatedCostMin.toLocaleString()} - Rs. {estimatedCostMax.toLocaleString()}
                 </div>
                 <div className="text-[11px] text-slate-400 mt-1">Includes full design, code, cloud setup & QA</div>
               </div>
+
 
               {/* Highlights */}
               <div className="space-y-3">

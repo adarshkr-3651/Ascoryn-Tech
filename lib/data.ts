@@ -160,13 +160,13 @@ export const SERVICES: Service[] = [
 export const CASE_STUDIES: CaseStudy[] = [
   {
     id: 'fintech-core',
-    title: 'Global FinTech Real-Time Payment Gateway Transformation',
-    client: 'Apex Global Financials',
+    title: 'FinTech Real-Time Payment Gateway & Core Banking Transformation',
+    client: 'Apex FinTech Solutions',
     industry: 'Financial Technology',
     category: 'FinTech & Security',
     metrics: [
       { label: 'Transaction Latency', value: '< 45ms' },
-      { label: 'Daily Volume', value: '$42M+' },
+      { label: 'Daily Volume', value: 'Rs. 4.2 Cr+' },
       { label: 'System Uptime', value: '99.999%' }
     ],
     description: 'Re-engineered a legacy transaction core into a high-throughput microservices architecture with sub-second fraud detection.',
@@ -197,7 +197,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     id: 'logistics-cloud',
     title: 'Autonomous Supply Chain Fleet Optimization Engine',
-    client: 'TransConti Logistics',
+    client: 'TransLogistics Express',
     industry: 'Supply Chain & Logistics',
     category: 'Enterprise Cloud',
     metrics: [
@@ -208,7 +208,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     description: 'Designed a real-time IoT fleet tracking and predictive routing platform handling millions of location updates per minute.',
     challenge: 'Unpredictable delays and sub-optimal route planning led to excessive fuel burn and missed delivery windows.',
     solution: 'Engineered a Kubernetes-backed cloud platform with predictive traffic ML models and dynamic driver dispatching.',
-    impact: 'Saved $6.4M in annual fuel expenses and improved customer satisfaction scores to all-time highs.',
+    impact: 'Saved Rs. 6.4 Cr in annual operational expenses and improved customer satisfaction scores to all-time highs.',
     tags: ['Kubernetes', 'Go', 'IoT Gateway', 'PostgreSQL', 'Grafana'],
     imageBg: 'from-lime-950 via-slate-900 to-blue-950'
   },
@@ -252,9 +252,9 @@ export const TECH_STACK: TechItem[] = [
 export const TESTIMONIALS: Testimonial[] = [
   {
     id: '1',
-    name: 'Marcus Vance',
-    role: 'Chief Technology Officer',
-    company: 'Apex Global Financials',
+    name: 'Aayush Shrestha',
+    role: '',
+    company: 'Kathmandu',
     avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
     content: 'Ascoryn Tech delivered beyond our highest expectations. Their team re-architected our transaction core without a single minute of downtime. The speed, security, and precision they bring is world-class.',
     rating: 5,
@@ -262,9 +262,9 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     id: '2',
-    name: 'Dr. Elena Rostova',
-    role: 'VP of Digital Health',
-    company: 'BioHealth Dynamics',
+    name: 'Dr. Prerana Adhikari',
+    role: '',
+    company: 'Lalitpur',
     avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80',
     content: 'The custom AI diagnostics copilot created by Ascoryn Tech has transformed how our clinicians interact with patient records. Their deep understanding of both AI security and healthcare regulations set them apart.',
     rating: 5,
@@ -272,13 +272,13 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     id: '3',
-    name: 'David Sterling',
-    role: 'Head of Infrastructure',
-    company: 'TransConti Logistics',
+    name: 'Bikash Pokharel',
+    role: '',
+    company: 'Bhaktapur',
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
     content: 'Working with Ascoryn Tech felt like having a powerhouse team of veteran architects in-house. They modernized our cloud fleet systems flawlessly and saved us millions in annual operational overhead.',
     rating: 5,
-    results: '$6.4M Annual Savings'
+    results: 'Rs. 6.4 Cr+ Annual Savings'
   }
 ];
 
@@ -316,9 +316,10 @@ export const CORE_VALUES: CoreValue[] = [
 export const COMPANY_STATS = [
   { label: 'Successful Projects', value: '240+' },
   { label: 'Client Satisfaction', value: '99.4%' },
-  { label: 'Cloud Resources Managed', value: '$100M+' },
+  { label: 'Cloud Resources Managed', value: 'Rs. 100 Cr+' },
   { label: 'Global Tech Experts', value: '65+' }
 ];
+
 
 export const FAQS = [
   {

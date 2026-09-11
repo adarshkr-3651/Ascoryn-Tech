@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import AscorynLogo from './logo';
-import { Menu, X, ArrowUpRight, Sparkles, Sun, Moon } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Sparkles, Sun, Moon, MessageSquare } from 'lucide-react';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -75,7 +75,18 @@ export default function Navbar() {
         </nav>
 
         {/* Action Button & Theme Toggle Button */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden md:flex items-center gap-2.5">
+          {/* Direct WhatsApp Quick Link */}
+          <a
+            href="https://wa.me/9779762958887?text=Hello%20Ascoryn%20Tech%2C%20I%20would%20like%20to%20inquire%20about%20your%20services"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Chat on WhatsApp (+977 9762958887)"
+            className="p-2.5 rounded-full bg-emerald-500/10 dark:bg-emerald-500/15 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500 hover:text-white transition-all duration-300 flex items-center justify-center group shadow-sm"
+          >
+            <MessageSquare className="w-4 h-4 group-hover:scale-110 transition-transform" />
+          </a>
+
           {/* Functional Theme Button (Default Light) */}
           <button
             onClick={toggleTheme}
@@ -103,6 +114,16 @@ export default function Navbar() {
 
         {/* Mobile Menu Toggle Button */}
         <div className="flex md:hidden items-center gap-2">
+          <a
+            href="https://wa.me/9779762958887?text=Hello%20Ascoryn%20Tech%2C%20I%20would%20like%20to%20inquire%20about%20your%20services"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp Direct"
+            className="p-2 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30"
+          >
+            <MessageSquare className="w-5 h-5" />
+          </a>
+
           <button
             onClick={toggleTheme}
             aria-label="Toggle Theme"
@@ -137,6 +158,15 @@ export default function Navbar() {
             ))}
             <div className="pt-2 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-2">
               <a
+                href="https://wa.me/9779762958887?text=Hello%20Ascoryn%20Tech%2C%20I%20would%20like%20to%20inquire%20about%20your%20services"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full text-center py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl text-sm shadow-md flex items-center justify-center gap-2"
+              >
+                <MessageSquare className="w-4 h-4" />
+                <span>WhatsApp: +977 9762958887</span>
+              </a>
+              <a
                 href="#contact"
                 onClick={() => setMobileMenuOpen(false)}
                 className="w-full text-center py-3 bg-gradient-to-r from-cyan-500 via-blue-600 to-lime-500 text-white font-semibold rounded-xl text-sm shadow-lg shadow-cyan-500/20"
@@ -150,3 +180,4 @@ export default function Navbar() {
     </header>
   );
 }
+
