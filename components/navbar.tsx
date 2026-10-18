@@ -39,7 +39,6 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Services', href: '#services' },
-    { name: 'Case Studies', href: '#case-studies' },
     { name: 'Tech Stack', href: '#tech-stack' },
     { name: 'ROI Estimator', href: '#calculator' },
     { name: 'Vision', href: '#vision' },

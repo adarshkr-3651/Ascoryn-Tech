@@ -118,7 +118,6 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <h4 className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-4">Company</h4>
             <ul className="space-y-2.5 text-xs">
-              <li><a href="#case-studies" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Featured Case Studies</a></li>
               <li><a href="#tech-stack" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Modern Tech Stack</a></li>
               <li><a href="#calculator" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">ROI Cost Estimator</a></li>
               <li><a href="#vision" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Our Vision & Values</a></li>

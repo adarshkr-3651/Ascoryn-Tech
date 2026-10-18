@@ -52,10 +52,10 @@ export default function Hero() {
               </a>
 
               <a
-                href="#case-studies"
+                href="#services"
                 className="px-7 py-4 rounded-xl bg-white dark:bg-slate-900/90 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700/80 hover:border-cyan-500/60 hover:text-cyan-600 dark:hover:text-cyan-400 font-semibold text-base transition-all duration-300 flex items-center justify-center gap-2 text-center shadow-sm"
               >
-                <span>View Proven Case Studies</span>
+                <span>Explore Core Services</span>
               </a>
             </div>
 

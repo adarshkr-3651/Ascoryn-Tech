@@ -2,7 +2,6 @@ import React from 'react';
 import Navbar from '@/components/navbar';
 import Hero from '@/components/hero';
 import ServicesSection from '@/components/services';
-import CaseStudiesSection from '@/components/case-studies';
 import TechStackSection from '@/components/tech-stack';
 import CostCalculator from '@/components/cost-calculator';
 import AboutVisionSection from '@/components/about-vision';
@@ -28,10 +27,6 @@ export default function Home() {
 
       {/* Services & Capabilities Matrix */}
       <ServicesSection />
-
-      {/* Case Studies & Proven Results Showcase */}
-      <CaseStudiesSection />
-
 
       {/* Interactive Project Cost & ROI Estimator */}
       <CostCalculator />
