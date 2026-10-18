@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 const publicDir = path.resolve(__dirname, '../public');
 
 async function generateQRCodes() {
-  const websiteUrl = 'https://ascoryntech.vercel.app';
+  const websiteUrl = 'https://www.ascoryntech.com';
   const whatsappUrl = 'https://wa.me/9779762958887?text=Hello%20Ascoryn%20Tech%2C%20I%20would%20like%20to%20inquire%20about%20your%20services';
   const vcardData = `BEGIN:VCARD
 VERSION:3.0
@@ -17,8 +17,8 @@ ORG:Ascoryn Tech Inc.
 TITLE:Enterprise AI & Cloud Engineering
 TEL;TYPE=WORK,VOICE:+9779762958887
 TEL;TYPE=CELL,VOICE:+9779745653468
-EMAIL;TYPE=PREF,INTERNET:ascoryntech@gmail.com
-URL:https://ascoryntech.vercel.app
+EMAIL;TYPE=PREF,INTERNET:info@ascoryntech.com
+URL:https://www.ascoryntech.com
 ADR;TYPE=WORK:;;Sankhamul-31;Kathmandu;;44600;Nepal
 NOTE:Innovating for Tomorrow - Enterprise AI & Cloud Engineering
 END:VCARD`;

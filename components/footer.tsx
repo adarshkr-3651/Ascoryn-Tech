@@ -20,7 +20,7 @@ export default function Footer() {
           <div className="lg:col-span-4 space-y-4">
             <AscorynLogo size="lg" />
             <p className="text-sm text-slate-600 dark:text-slate-300 max-w-sm leading-relaxed mt-3 transition-colors">
-              Ascoryn Tech delivers high-velocity enterprise software development, autonomous AI agent pipelines, multi-cloud architecture, and zero-trust cybersecurity.
+              Ascoryn Tech delivers high-velocity enterprise software development, autonomous AI agent pipelines, multi-cloud architecture, and advanced FinTech solutions.
             </p>
 
             {/* Direct Contact Summary */}
@@ -31,14 +31,14 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
-                <a href="mailto:ascoryntech@gmail.com" className="text-slate-800 dark:text-slate-200 font-medium hover:text-cyan-500 transition-colors">
-                  ascoryntech@gmail.com
+                <a href="mailto:info@ascoryntech.com" className="text-slate-800 dark:text-slate-200 font-medium hover:text-cyan-500 transition-colors">
+                  info@ascoryntech.com
                 </a>
               </div>
               <div className="flex items-center gap-2">
                 <Globe className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
-                <a href="https://ascoryntech.vercel.app" target="_blank" rel="noopener noreferrer" className="text-slate-800 dark:text-slate-200 font-medium hover:text-cyan-500 transition-colors">
-                  https://ascoryntech.vercel.app
+                <a href="https://www.ascoryntech.com" target="_blank" rel="noopener noreferrer" className="text-slate-800 dark:text-slate-200 font-medium hover:text-cyan-500 transition-colors">
+                  www.ascoryntech.com
                 </a>
               </div>
             </div>
@@ -59,7 +59,7 @@ export default function Footer() {
 
               {/* Email Direct */}
               <a
-                href="mailto:ascoryntech@gmail.com"
+                href="mailto:info@ascoryntech.com"
                 aria-label="Email"
                 className="p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-cyan-600 dark:text-cyan-400 hover:bg-cyan-500 hover:text-white dark:hover:bg-cyan-600 hover:border-cyan-500 transition-all shadow-sm"
                 title="Send Email"
@@ -109,7 +109,7 @@ export default function Footer() {
               <li><a href="#services" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">AI & LLM Automation</a></li>
               <li><a href="#services" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Cloud Architecture</a></li>
               <li><a href="#services" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Custom Next.js Apps</a></li>
-              <li><a href="#services" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Zero-Trust Security</a></li>
+              <li><a href="#services" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">FinTech Core Systems</a></li>
               <li><a href="#services" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Real-Time Data BI</a></li>
             </ul>
           </div>
@@ -142,15 +142,16 @@ export default function Footer() {
               <div className="p-1.5 bg-white rounded-xl border border-slate-200 shadow-sm shrink-0">
                 <img
                   src="/website-qr.png"
-                  alt="Ascoryn Tech Website QR"
+                  alt="Ascoryn Tech Website QR Code"
                   width={84}
                   height={84}
+                  loading="lazy"
                   className="w-20 h-20 object-contain rounded-lg"
                 />
               </div>
               <div className="text-xs space-y-1.5">
                 <p className="text-slate-600 dark:text-slate-300 font-medium leading-tight">
-                  Scan with any phone camera to visit <strong className="text-cyan-600 dark:text-cyan-400">ascoryntech.vercel.app</strong> instantly.
+                  Scan with any phone camera to visit <strong className="text-cyan-600 dark:text-cyan-400">www.ascoryntech.com</strong> instantly.
                 </p>
                 <a
                   href="#contact"
@@ -165,6 +166,7 @@ export default function Footer() {
             <form onSubmit={(e) => e.preventDefault()} className="pt-2 border-t border-slate-200 dark:border-slate-800">
               <div className="relative">
                 <input
+                  suppressHydrationWarning
                   type="email"
                   placeholder="Subscribe for tech briefs..."
                   className="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-cyan-500"

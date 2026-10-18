@@ -44,7 +44,7 @@ export default function TechStackSection() {
             Engineered with <span className="text-gradient-primary">Battle-Tested Technologies</span>
           </h2>
           <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg transition-colors">
-            We leverage state-of-the-art frameworks, cloud native services, vector databases, and AI tooling to build resilient enterprise systems.
+            We leverage state-of-the-art frameworks, high-throughput cloud infrastructure, and predictive AI tooling to build resilient enterprise and FinTech platforms.
           </p>
 
           {/* Category Filter Buttons */}

@@ -1,14 +1,14 @@
 'use client';
 
 import React, { useState } from 'react';
-import { FAQS } from '@/lib/data';
+//
 import {
   Mail,
   Phone,
   MapPin,
   Send,
   CheckCircle2,
-  ChevronDown,
+
   Sparkles,
   Clock,
   ShieldCheck,
@@ -21,6 +21,7 @@ import {
   ExternalLink,
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import TerminalPreviewCard from './terminal-preview-card';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -28,26 +29,20 @@ export default function ContactSection() {
     email: '',
     company: '',
     service: 'AI & Automation',
-    budget: 'Rs. 1,00,000 - 2,50,000',
+    budget: 'Rs. 10,000 - 25,000',
     message: '',
   });
+  const [customBudget, setCustomBudget] = useState('');
 
   const [submitted, setSubmitted] = useState(false);
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const [copiedKey, setCopiedKey] = useState<string | null>(null);
   const [qrTab, setQrTab] = useState<'website' | 'whatsapp' | 'vcard'>('website');
 
-  const copyToClipboard = (text: string, key: string) => {
-    navigator.clipboard.writeText(text);
-    setCopiedKey(key);
-    setTimeout(() => {
-      setCopiedKey(null);
-    }, 2000);
-  };
+
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
+    if (formData.budget === 'Custom Range' && !customBudget.trim()) return;
 
     // Trigger confetti celebration
     try {
@@ -67,10 +62,10 @@ export default function ContactSection() {
   const qrDetails = {
     website: {
       title: 'Ascoryn Tech Website',
-      subtitle: 'Scan to open https://ascoryntech.vercel.app on your mobile device',
+      subtitle: 'Scan to open https://www.ascoryntech.com on your mobile device',
       src: '/website-qr.png',
       svgSrc: '/website-qr.svg',
-      actionUrl: 'https://ascoryntech.vercel.app',
+      actionUrl: 'https://www.ascoryntech.com',
       badge: 'Official Web Portal',
     },
     whatsapp: {
@@ -86,7 +81,7 @@ export default function ContactSection() {
       subtitle: 'Scan to add Ascoryn Tech phone & email straight to your contacts',
       src: '/vcard-qr.png',
       svgSrc: '/vcard-qr.svg',
-      actionUrl: 'mailto:ascoryntech@gmail.com',
+      actionUrl: 'mailto:info@ascoryntech.com',
       badge: 'Digital vCard',
     },
   };
@@ -118,166 +113,7 @@ export default function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-20">
           
           {/* Contact Cards Column */}
-          <div className="lg:col-span-5 space-y-6">
-            <div className="bg-slate-50 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-8 space-y-6 shadow-md dark:shadow-xl transition-colors">
-              <div className="flex items-center justify-between">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white">Get Direct Access</h3>
-                <span className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-lime-500/15 text-lime-600 dark:text-lime-400 border border-lime-500/30 flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-lime-500 animate-pulse" />
-                  Available 24/7
-                </span>
-              </div>
-              
-              {/* Phone & WhatsApp Card */}
-              <div className="flex items-start gap-4 group">
-                <div className="p-3 rounded-xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-lime-600 dark:text-lime-400 shadow-sm shrink-0">
-                  <Phone className="w-5 h-5" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
-                    Phone / WhatsApp Hotlines
-                  </div>
-                  
-                  {/* Number 1 */}
-                  <div className="flex items-center justify-between gap-2 mt-1">
-                    <a
-                      href="tel:+9779762958887"
-                      className="text-sm sm:text-base font-bold text-slate-900 dark:text-white hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors truncate"
-                    >
-                      +977 9762958887
-                    </a>
-                    <div className="flex items-center gap-1.5 shrink-0">
-                      <a
-                        href="https://wa.me/9779762958887?text=Hello%20Ascoryn%20Tech%2C%20I%20would%20like%20to%20inquire%20about%20your%20services"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-2 py-1 rounded-md bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500 hover:text-white text-[11px] font-bold transition-all flex items-center gap-1 border border-emerald-500/30"
-                        title="Chat on WhatsApp"
-                      >
-                        <MessageSquare className="w-3 h-3" />
-                        <span>WhatsApp</span>
-                      </a>
-                      <button
-                        onClick={() => copyToClipboard('9762958887', 'phone1')}
-                        className="p-1 rounded-md text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors"
-                        title="Copy Number"
-                      >
-                        {copiedKey === 'phone1' ? <Check className="w-3.5 h-3.5 text-lime-500" /> : <Copy className="w-3.5 h-3.5" />}
-                      </button>
-                    </div>
-                  </div>
-
-                  {/* Number 2 */}
-                  <div className="flex items-center justify-between gap-2 mt-2">
-                    <a
-                      href="tel:+9779745653468"
-                      className="text-sm sm:text-base font-bold text-slate-900 dark:text-white hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors truncate"
-                    >
-                      +977 9745653468
-                    </a>
-                    <div className="flex items-center gap-1.5 shrink-0">
-                      <a
-                        href="https://wa.me/9779745653468?text=Hello%20Ascoryn%20Tech%2C%20I%20would%20like%20to%20inquire%20about%20your%20services"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-2 py-1 rounded-md bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500 hover:text-white text-[11px] font-bold transition-all flex items-center gap-1 border border-emerald-500/30"
-                        title="Chat on WhatsApp"
-                      >
-                        <MessageSquare className="w-3 h-3" />
-                        <span>WhatsApp</span>
-                      </a>
-                      <button
-                        onClick={() => copyToClipboard('9745653468', 'phone2')}
-                        className="p-1 rounded-md text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors"
-                        title="Copy Number"
-                      >
-                        {copiedKey === 'phone2' ? <Check className="w-3.5 h-3.5 text-lime-500" /> : <Copy className="w-3.5 h-3.5" />}
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Email Card */}
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-cyan-600 dark:text-cyan-400 shadow-sm shrink-0">
-                  <Mail className="w-5 h-5" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Email Inquiries</div>
-                  <div className="flex items-center justify-between gap-2 mt-0.5">
-                    <a
-                      href="mailto:ascoryntech@gmail.com"
-                      className="text-base font-bold text-slate-900 dark:text-white hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors truncate"
-                    >
-                      ascoryntech@gmail.com
-                    </a>
-                    <button
-                      onClick={() => copyToClipboard('ascoryntech@gmail.com', 'email')}
-                      className="p-1 rounded-md text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors shrink-0"
-                      title="Copy Email"
-                    >
-                      {copiedKey === 'email' ? <Check className="w-3.5 h-3.5 text-lime-500" /> : <Copy className="w-3.5 h-3.5" />}
-                    </button>
-                  </div>
-                  <div className="text-[11px] text-lime-600 dark:text-lime-400 font-medium mt-0.5 flex items-center gap-1">
-                    <Clock className="w-3 h-3" /> Average response: &lt; 2 Hours
-                  </div>
-                </div>
-              </div>
-
-              {/* Website Card */}
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-blue-600 dark:text-blue-400 shadow-sm shrink-0">
-                  <Globe className="w-5 h-5" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Official Website</div>
-                  <div className="flex items-center justify-between gap-2 mt-0.5">
-                    <a
-                      href="https://ascoryntech.vercel.app"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-base font-bold text-slate-900 dark:text-white hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors truncate flex items-center gap-1.5"
-                    >
-                      <span>https://ascoryntech.vercel.app</span>
-                      <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
-                    </a>
-                    <button
-                      onClick={() => copyToClipboard('https://ascoryntech.vercel.app', 'website')}
-                      className="p-1 rounded-md text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors shrink-0"
-                      title="Copy URL"
-                    >
-                      {copiedKey === 'website' ? <Check className="w-3.5 h-3.5 text-lime-500" /> : <Copy className="w-3.5 h-3.5" />}
-                    </button>
-                  </div>
-                  <div className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">High-speed global cloud deployment</div>
-                </div>
-              </div>
-
-              {/* Location Card */}
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-purple-600 dark:text-purple-400 shadow-sm shrink-0">
-                  <MapPin className="w-5 h-5" />
-                </div>
-                <div>
-                  <div className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Office Location</div>
-                  <div className="text-sm font-bold text-slate-900 dark:text-white">Ascoryn Tech Inc.</div>
-                  <div className="text-xs text-slate-700 dark:text-slate-300 font-medium">Sankhamul-31, Kathmandu, 44600</div>
-                  <div className="text-[11px] text-slate-500 dark:text-slate-400">Bagmati Province, Nepal</div>
-                </div>
-              </div>
-            </div>
-
-            {/* SLA Promise Box */}
-            <div className="bg-gradient-to-r from-slate-900 to-cyan-950 p-6 rounded-2xl border border-cyan-500/30 flex items-center gap-4 text-white shadow-xl">
-              <ShieldCheck className="w-10 h-10 text-lime-400 shrink-0" />
-              <div className="text-xs text-slate-300">
-                <strong className="text-white block text-sm">100% NDA Protected & Confidential</strong>
-                We respect your IP. All strategy discussions and system code audits are covered under mutual non-disclosure.
-              </div>
-            </div>
-          </div>
+          <TerminalPreviewCard />
 
           {/* Interactive Form Column */}
           <div className="lg:col-span-7">
@@ -292,12 +128,31 @@ export default function ContactSection() {
                   <p className="text-slate-600 dark:text-slate-300 text-sm max-w-md mx-auto">
                     Thank you, <strong className="text-cyan-600 dark:text-cyan-400">{formData.name}</strong>. A Senior Solutions Architect from Ascoryn Tech will review your project details and reach out within 2 hours.
                   </p>
-                  <button
-                    onClick={() => setSubmitted(false)}
-                    className="px-6 py-2.5 rounded-xl bg-slate-200 dark:bg-slate-800 text-xs font-semibold text-slate-900 dark:text-white hover:bg-slate-300 dark:hover:bg-slate-700 mt-4"
-                  >
-                    Send Another Project Inquiry
-                  </button>
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-200/80 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-xs text-slate-700 dark:text-slate-300">
+                    <span className="text-slate-500 dark:text-slate-400">Budget:</span>
+                    <span className="font-semibold text-cyan-600 dark:text-cyan-400">
+                      {formData.budget === 'Custom Range' ? customBudget : formData.budget}
+                    </span>
+                  </div>
+                  <div>
+                    <button
+                      onClick={() => {
+                        setSubmitted(false);
+                        setFormData({
+                          name: '',
+                          email: '',
+                          company: '',
+                          service: 'AI & Automation',
+                          budget: 'Rs. 10,000 - 25,000',
+                          message: '',
+                        });
+                        setCustomBudget('');
+                      }}
+                      className="px-6 py-2.5 rounded-xl bg-slate-200 dark:bg-slate-800 text-xs font-semibold text-slate-900 dark:text-white hover:bg-slate-300 dark:hover:bg-slate-700 mt-2"
+                    >
+                      Send Another Project Inquiry
+                    </button>
+                  </div>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -311,7 +166,7 @@ export default function ContactSection() {
                         required
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        placeholder="e.g. Sarah Jenkins"
+                        placeholder="Niraj Kumar"
                         className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white text-sm focus:outline-none focus:border-cyan-500 transition-colors"
                       />
                     </div>
@@ -321,11 +176,12 @@ export default function ContactSection() {
                         Work Email Address *
                       </label>
                       <input
+                        suppressHydrationWarning
                         type="email"
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        placeholder="sarah@company.com"
+                        placeholder="niraj@ascoryntech.com"
                         className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white text-sm focus:outline-none focus:border-cyan-500 transition-colors"
                       />
                     </div>
@@ -340,7 +196,7 @@ export default function ContactSection() {
                         type="text"
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                        placeholder="Enterprise Inc."
+                        placeholder="Ascoryn Tech Pvt Ltd"
                         className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white text-sm focus:outline-none focus:border-cyan-500 transition-colors"
                       />
                     </div>
@@ -356,25 +212,48 @@ export default function ContactSection() {
                       >
                         <option value="AI & Automation">AI & LLM Automation</option>
                         <option value="Cloud Architecture">Cloud & DevOps</option>
-                        <option value="Custom SaaS">Full-Stack Next.js SaaS</option>
-                        <option value="Cybersecurity">Zero-Trust Security</option>
+                        <option value="Custom SaaS">Full-Stack</option>
                       </select>
                     </div>
 
                     <div>
-                      <label className="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider block mb-2">
-                        Budget Range
-                      </label>
+                      <div className="flex items-center justify-between mb-2">
+                        <label className="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider block">
+                          Budget Range
+                        </label>
+                        {formData.budget === 'Custom Range' && (
+                          <span className="text-[11px] font-semibold text-cyan-600 dark:text-cyan-400">
+                            Custom Entry
+                          </span>
+                        )}
+                      </div>
                       <select
                         value={formData.budget}
                         onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
                         className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white text-sm focus:outline-none focus:border-cyan-500 transition-colors"
                       >
-                        <option value="Rs. 50k - 1.5 Lakhs">Rs. 50,000 - 1,50,000</option>
-                        <option value="Rs. 1.5 Lakhs - 5 Lakhs">Rs. 1,50,000 - 5,00,000</option>
-                        <option value="Rs. 5 Lakhs - 15 Lakhs">Rs. 5,00,000 - 15,00,000</option>
-                        <option value="Rs. 15 Lakhs+">Rs. 15,00,000+</option>
+                        <option value="Rs. 10,000 - 25,000">Rs. 10,000 - 25,000</option>
+                        <option value="Rs. 25,000 - 35,000">Rs. 25,000 - 35,000</option>
+                        <option value="Rs. 35,000 - 50,000">Rs. 35,000 - 50,000</option>
+                        <option value="Rs. 50,000 - 1,50,000">Rs. 50,000 - 1,50,000</option>
+                        <option value="Rs. 1,50,000 - 5,00,000">Rs. 1,50,000 - 5,00,000</option>
+                        <option value="Rs. 5,00,000 - 15,00,000">Rs. 5,00,000 - 15,00,000</option>
+                        <option value="Rs. 15,00,000+">Rs. 15,00,000+</option>
+                        <option value="Custom Range">Custom Range (Enter below)</option>
                       </select>
+
+                      {formData.budget === 'Custom Range' && (
+                        <div className="mt-2.5 animate-in fade-in slide-in-from-top-1 duration-200">
+                          <input
+                            type="text"
+                            required
+                            value={customBudget}
+                            onChange={(e) => setCustomBudget(e.target.value)}
+                            placeholder="Enter custom budget (e.g. Rs. 15,000 - 20,000)"
+                            className="w-full px-4 py-2.5 rounded-xl bg-white dark:bg-slate-950 border border-cyan-500/60 dark:border-cyan-500/40 text-slate-900 dark:text-white text-sm placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/30 transition-all shadow-sm"
+                          />
+                        </div>
+                      )}
                     </div>
                   </div>
 
@@ -498,6 +377,7 @@ export default function ContactSection() {
                     alt={`${activeQr.title} QR Code`}
                     width={220}
                     height={220}
+                    loading="lazy"
                     className="w-48 h-48 sm:w-56 sm:h-56 object-contain rounded-xl"
                   />
                   {/* Embedded brand pill in center */}
@@ -520,7 +400,7 @@ export default function ContactSection() {
                     <span>Scan with Mobile Camera</span>
                   </div>
                   <div className="text-[10px] text-slate-500 mt-0.5 font-mono truncate max-w-[200px] mx-auto">
-                    {qrTab === 'website' ? 'ascoryntech.vercel.app' : qrTab === 'whatsapp' ? '+977 9762958887' : 'ascoryntech@gmail.com'}
+                    {qrTab === 'website' ? 'www.ascoryntech.com' : qrTab === 'whatsapp' ? '+977 9762958887' : 'info@ascoryntech.com'}
                   </div>
                 </div>
               </div>
@@ -528,41 +408,7 @@ export default function ContactSection() {
           </div>
         </div>
 
-        {/* FAQ Accordion Section */}
-        <div id="faq" className="mt-10 pt-16 border-t border-slate-200 dark:border-slate-800 transition-colors">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">Frequently Asked Questions</h3>
-          </div>
 
-          <div className="max-w-4xl mx-auto space-y-4">
-            {FAQS.map((faq, idx) => {
-              const isOpen = openFaq === idx;
-              return (
-                <div
-                  key={idx}
-                  className="rounded-xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 overflow-hidden transition-colors"
-                >
-                  <button
-                    onClick={() => setOpenFaq(isOpen ? null : idx)}
-                    className="w-full p-5 text-left flex items-center justify-between text-base font-bold text-slate-900 dark:text-white hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
-                  >
-                    <span>{faq.question}</span>
-                    <ChevronDown
-                      className={`w-5 h-5 text-cyan-600 dark:text-cyan-400 transition-transform duration-300 ${
-                        isOpen ? 'rotate-180' : ''
-                      }`}
-                    />
-                  </button>
-                  {isOpen && (
-                    <div className="px-5 pb-5 text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-200 dark:border-slate-800/60 pt-3 animate-in fade-in duration-200">
-                      {faq.answer}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </div>
 
       </div>
     </section>

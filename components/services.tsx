@@ -2,22 +2,21 @@
 
 import React, { useState } from 'react';
 import { SERVICES, Service } from '@/lib/data';
-import { Cpu, CloudLightning, Code2, ShieldCheck, BarChart3, Layout, ArrowRight, CheckCircle2, Sparkles, X } from 'lucide-react';
+import { Cpu, CloudLightning, Code2, Landmark, Wallet, Layout, ArrowRight, CheckCircle2, Sparkles, X } from 'lucide-react';
 
 const iconMap: Record<string, React.ReactNode> = {
   Cpu: <Cpu className="w-7 h-7 text-cyan-600 dark:text-cyan-400" />,
   CloudLightning: <CloudLightning className="w-7 h-7 text-blue-600 dark:text-blue-400" />,
   Code2: <Code2 className="w-7 h-7 text-lime-600 dark:text-lime-400" />,
-  ShieldCheck: <ShieldCheck className="w-7 h-7 text-emerald-600 dark:text-emerald-400" />,
-  BarChart3: <BarChart3 className="w-7 h-7 text-teal-600 dark:text-teal-400" />,
+  Landmark: <Landmark className="w-7 h-7 text-indigo-600 dark:text-indigo-400" />,
+  Wallet: <Wallet className="w-7 h-7 text-emerald-600 dark:text-emerald-400" />,
   Layout: <Layout className="w-7 h-7 text-cyan-600 dark:text-cyan-300" />,
 };
 
 export default function ServicesSection() {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [activeModalService, setActiveModalService] = useState<Service | null>(null);
-
-  const categories = ['All', 'AI & Data', 'Cloud & Engineering', 'Security & Advisory'];
+  const categories = ['All', 'AI & Data', 'Cloud & Engineering', 'FinTech Solutions'];
 
   const filteredServices = selectedCategory === 'All'
     ? SERVICES
@@ -41,7 +40,7 @@ export default function ServicesSection() {
             Architected for <span className="text-gradient-primary">Unrivaled Performance</span>
           </h2>
           <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg transition-colors">
-            Ascoryn Tech delivers end-to-end technical mastery across enterprise software, autonomous AI models, cloud infrastructure, and zero-trust cybersecurity.
+            Ascoryn Tech delivers end-to-end technical mastery across enterprise software, autonomous AI models, cloud infrastructure, and advanced fintech solutions.
           </p>
 
           {/* Category Filter Pills */}

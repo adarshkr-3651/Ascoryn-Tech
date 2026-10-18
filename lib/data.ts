@@ -4,7 +4,7 @@ export interface Service {
   shortDesc: string;
   fullDesc: string;
   iconName: string;
-  category: 'AI & Data' | 'Cloud & Engineering' | 'Security & Advisory';
+  category: 'AI & Data' | 'Cloud & Engineering' | 'FinTech Solutions';
   metrics: string;
   features: string[];
   gradient: string;
@@ -105,38 +105,38 @@ export const SERVICES: Service[] = [
     gradient: 'from-cyan-400 via-lime-500 to-blue-600'
   },
   {
-    id: 'cybersecurity-defense',
-    title: 'Zero-Trust Cybersecurity',
-    shortDesc: 'Proactive threat detection, automated compliance management, and impenetrable enterprise defense.',
-    fullDesc: 'Protect your mission-critical data with end-to-end encryption, automated vulnerability scanners, identity governance, and compliance certifications (SOC2, ISO27001, HIPAA).',
-    iconName: 'ShieldCheck',
-    category: 'Security & Advisory',
-    metrics: 'Zero Security Breaches Recorded',
+    id: 'fintech-management-systems',
+    title: 'FinTech Portfolio & Wealth Management',
+    shortDesc: 'Enterprise platforms for real-time portfolio tracking, asset management, and financial reconciliation.',
+    fullDesc: 'We build secure FinTech management systems that provide high-fidelity tracking of digital assets, algorithmic portfolio rebalancing, and automated ledger reconciliation for asset managers.',
+    iconName: 'Landmark',
+    category: 'FinTech Solutions',
+    metrics: 'Real-Time Asset Tracking',
     features: [
-      'Zero-Trust Architecture & IAM Governance',
-      'Continuous Vulnerability & Penetration Testing',
-      'SOC2 / ISO 27001 / HIPAA Audit Readiness',
-      'Automated Incident Response & Threat Hunting',
-      'Encrypted Data Vaults & Key Management'
+      'Real-Time Portfolio & Asset Tracking',
+      'Algorithmic Wealth Rebalancing',
+      'Automated Ledger Reconciliation',
+      'Secure Digital Wallets & Custody',
+      'Compliance-Ready Reporting Dashboards'
     ],
-    gradient: 'from-lime-500 via-teal-500 to-blue-700'
+    gradient: 'from-blue-600 via-indigo-500 to-purple-600'
   },
   {
-    id: 'data-engineering',
-    title: 'Data Platform & Real-Time BI',
-    shortDesc: 'Transform fragmented raw data into actionable enterprise intelligence with modern data stack pipelines.',
-    fullDesc: 'We construct unified data lakes, real-time streaming architectures, and intuitive executive BI dashboards that empower data-backed decision-making across departments.',
-    iconName: 'BarChart3',
-    category: 'AI & Data',
-    metrics: '5M+ Events Processed / Sec',
+    id: 'fintech-data-ai',
+    title: 'Financial AI & Predictive Analytics',
+    shortDesc: 'Unlock institutional wealth insights with predictive ML, risk scoring, and algorithmic models.',
+    fullDesc: 'Empower financial institutions with advanced AI workflows for dynamic risk assessment, credit scoring, algorithmic trading, and personalized wealth management assistants.',
+    iconName: 'Wallet',
+    category: 'FinTech Solutions',
+    metrics: 'Sub-Second Risk Scoring',
     features: [
-      'Snowflake, Databricks & BigQuery Engineering',
-      'Real-Time Streaming Pipelines (Kafka / Flink)',
-      'Executive Dashboards & Embedded BI',
-      'Automated Data Quality & Governance',
-      'Customer 360 & Analytics Engines'
+      'Algorithmic Trading & Quants ML',
+      'Dynamic Credit Risk Models',
+      'AI-Powered Wealth Management',
+      'KYC/AML Automation Pipelines',
+      'Real-Time Market Data Streaming'
     ],
-    gradient: 'from-blue-500 via-cyan-400 to-lime-500'
+    gradient: 'from-teal-500 via-emerald-500 to-lime-500'
   },
   {
     id: 'digital-product-ux',
@@ -173,7 +173,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     challenge: 'Legacy monolithic architecture faced database locks during peak load, causing transaction latency spikes up to 4.2 seconds.',
     solution: 'Ascoryn Tech implemented an event-driven Architecture with Apache Kafka, Redis Cluster, Next.js dashboard, and AI fraud scoring.',
     impact: 'Reduced transaction processing times by 90% while achieving 99.999% uptime during high-volume trading surges.',
-    tags: ['Next.js', 'Kafka', 'Redis', 'AWS', 'Zero-Trust Security'],
+    tags: ['Next.js', 'Kafka', 'Redis', 'AWS', 'Bank-Grade Security'],
     imageBg: 'from-blue-900 via-slate-900 to-cyan-950'
   },
   {
@@ -246,7 +246,12 @@ export const TECH_STACK: TechItem[] = [
   { name: 'Pinecone / Vector DB', category: 'AI & Data', icon: 'Layers', proficiency: 93, popularFor: 'Semantic RAG Search' },
   { name: 'Docker & Kubernetes', category: 'DevOps & Cyber', icon: 'Box', proficiency: 95, popularFor: 'Container Orchestration' },
   { name: 'Terraform & CI/CD', category: 'DevOps & Cyber', icon: 'GitBranch', proficiency: 96, popularFor: 'Automated Deployment' },
-  { name: 'Zero-Trust SOC2 Guard', category: 'DevOps & Cyber', icon: 'Shield', proficiency: 98, popularFor: 'Enterprise Compliance' }
+  { name: 'GitHub Actions', category: 'DevOps & Cyber', icon: 'GitBranch', proficiency: 97, popularFor: 'Automated Workflows' },
+  { name: 'Apache Kafka', category: 'Backend & Cloud', icon: 'Layers', proficiency: 94, popularFor: 'Event-Driven Streaming' },
+  { name: 'AWS Lambda (Serverless)', category: 'Backend & Cloud', icon: 'Cloud', proficiency: 96, popularFor: 'Auto-Scaling Functions' },
+  { name: 'MongoDB & NoSQL', category: 'AI & Data', icon: 'Database', proficiency: 95, popularFor: 'Flexible Document Storage' },
+  { name: 'GraphQL & Apollo', category: 'Frontend', icon: 'Atom', proficiency: 93, popularFor: 'Dynamic API Queries' },
+  { name: 'FinTech Compliance Guard', category: 'DevOps & Cyber', icon: 'Shield', proficiency: 98, popularFor: 'Bank-Grade Compliance' }
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
@@ -300,7 +305,7 @@ export const CORE_VALUES: CoreValue[] = [
   {
     title: 'Uncompromising Trust',
     subtitle: 'Security & compliance first',
-    description: 'Your enterprise assets, IP, and customer data are safeguarded with bank-grade Zero-Trust architecture and encryption.',
+    description: 'Your enterprise assets, IP, and customer data are safeguarded with bank-grade security architecture and encryption.',
     icon: 'Shield',
     accent: 'from-lime-400 to-emerald-600'
   },
@@ -314,10 +319,10 @@ export const CORE_VALUES: CoreValue[] = [
 ];
 
 export const COMPANY_STATS = [
-  { label: 'Successful Projects', value: '240+' },
-  { label: 'Client Satisfaction', value: '99.4%' },
-  { label: 'Cloud Resources Managed', value: 'Rs. 100 Cr+' },
-  { label: 'Global Tech Experts', value: '65+' }
+  { label: 'Successful Projects', value: '25+' },
+  { label: 'Client Satisfaction', value: '98%' },
+  { label: 'Enterprise Clients', value: '15+' },
+  { label: 'In-House Tech Experts', value: '12+' }
 ];
 
 
@@ -332,7 +337,7 @@ export const FAQS = [
   },
   {
     question: 'How does Ascoryn Tech ensure data security and compliance?',
-    answer: 'We implement Zero-Trust principles, end-to-end encryption in transit and at rest, automated security scanning, and assist with SOC2, ISO27001, and HIPAA compliance verification.'
+    answer: 'We implement bank-grade security principles, end-to-end encryption in transit and at rest, automated security scanning, and assist with SOC2, ISO27001, and HIPAA compliance verification.'
   },
   {
     question: 'Can you work with our existing in-house development team?',

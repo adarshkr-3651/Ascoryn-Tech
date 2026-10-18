@@ -57,8 +57,11 @@ export default function TestimonialsSection() {
                 <div className="flex items-center gap-3 pt-4 border-t border-slate-200 dark:border-slate-800">
                   <img
                     src={item.avatar}
-                    alt={item.name}
-                    className="w-11 h-11 rounded-full object-cover border-2 border-cyan-500/40"
+                    alt={`${item.name} - ${item.company}`}
+                    width={44}
+                    height={44}
+                    loading="lazy"
+                    className="w-11 h-11 rounded-full object-cover border-2 border-cyan-500/40 shrink-0"
                   />
                   <div>
                     <div className="text-sm font-bold text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">

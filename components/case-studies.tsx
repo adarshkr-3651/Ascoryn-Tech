@@ -17,7 +17,7 @@ export default function CaseStudiesSection() {
   return (
     <section id="case-studies" className="py-24 bg-slate-50 dark:bg-[#050B16] relative overflow-hidden transition-colors duration-300">
       {/* Grid Pattern */}
-      <div className="absolute inset-0 bg-dark-grid opacity-50" />
+      <div className="absolute inset-0 opacity-50" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         

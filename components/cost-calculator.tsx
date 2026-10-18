@@ -22,7 +22,7 @@ export default function CostCalculator() {
     ai: { base: 120000, label: 'AI Agent & LLM Automation', roi: '350% Efficiency Increase' },
     app: { base: 150000, label: 'Next.js Custom SaaS App', roi: '3x Speed to Market' },
     cloud: { base: 180000, label: 'Cloud Architecture & DevOps', roi: '45% Infra Cost Cut' },
-    security: { base: 100000, label: 'Zero-Trust Cybersecurity Audit', roi: '100% Audit Compliance' },
+    security: { base: 100000, label: 'FinTech Compliance Audit', roi: '100% Audit Compliance' },
   };
 
   const tierMultipliers = {
@@ -102,7 +102,7 @@ export default function CostCalculator() {
               <label className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider block mb-3">
                 2. Project Scope & Architecture Scale
               </label>
-              <div className="grid grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3">
                 {(['mvp', 'growth', 'enterprise'] as const).map((t) => (
                   <button
                     key={t}
@@ -125,7 +125,7 @@ export default function CostCalculator() {
               <label className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider block mb-3">
                 3. Delivery Velocity
               </label>
-              <div className="grid grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3">
                 {(['standard', 'accelerated', 'blitz'] as const).map((s) => (
                   <button
                     key={s}

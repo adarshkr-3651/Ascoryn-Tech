@@ -8,6 +8,7 @@ import CostCalculator from '@/components/cost-calculator';
 import AboutVisionSection from '@/components/about-vision';
 import TestimonialsSection from '@/components/testimonials';
 import ContactSection from '@/components/contact-section';
+import FaqSection from '@/components/faq-section';
 import Footer from '@/components/footer';
 
 export default function Home() {
@@ -19,14 +20,18 @@ export default function Home() {
       {/* Hero Section with Circuit Animation & Code Card */}
       <Hero />
 
+      {/* Contact Hub, Inquiry Form & FAQs */}
+      <ContactSection />
+
+      {/* Filterable Tech Stack Explorer */}
+      <TechStackSection />
+
       {/* Services & Capabilities Matrix */}
       <ServicesSection />
 
       {/* Case Studies & Proven Results Showcase */}
       <CaseStudiesSection />
 
-      {/* Filterable Tech Stack Explorer */}
-      <TechStackSection />
 
       {/* Interactive Project Cost & ROI Estimator */}
       <CostCalculator />
@@ -37,8 +42,8 @@ export default function Home() {
       {/* Client Testimonials & Social Proof */}
       <TestimonialsSection />
 
-      {/* Contact Hub, Inquiry Form & FAQs */}
-      <ContactSection />
+      {/* Frequently Asked Questions */}
+      <FaqSection />
 
       {/* Footer */}
       <Footer />
