@@ -1,12 +1,25 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import CircuitCanvas from './circuit-canvas';
 import { ArrowRight, CheckCircle2, ShieldCheck, Sparkles, Terminal, Activity, Zap, Cpu } from 'lucide-react';
 import { COMPANY_STATS } from '@/lib/data';
 import DirectAccessCard from './direct-access-card';
+import ConsultModal from './consult-modal';
 
 export default function Hero() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    const handleHash = () => {
+      if (window.location.hash === '#consult-modal') {
+        setIsModalOpen(true);
+      }
+    };
+    handleHash();
+    window.addEventListener('hashchange', handleHash);
+    return () => window.removeEventListener('hashchange', handleHash);
+  }, []);
   return (
     <section className="relative pt-24 pb-12 lg:pt-24 lg:pb-16 overflow-hidden bg-slate-50 dark:bg-[#070D1B] transition-colors duration-300">
       {/* Interactive Floating Circuit Canvas Background */}
@@ -43,13 +56,14 @@ export default function Hero() {
 
             {/* CTA Group */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto mb-6 sm:mb-8">
-              <a
-                href="#contact"
-                className="px-5 sm:px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-lime-500 text-white font-bold text-sm hover:shadow-xl hover:shadow-cyan-500/30 hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2 text-center group"
+              <button
+                type="button"
+                onClick={() => setIsModalOpen(true)}
+                className="px-5 sm:px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-lime-500 text-white font-bold text-sm hover:shadow-xl hover:shadow-cyan-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2 text-center group cursor-pointer"
               >
                 <span>Book a Tech Consult Session</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </a>
+              </button>
 
               <a
                 href="#services"
@@ -81,6 +95,9 @@ export default function Hero() {
 
         </div>
       </div>
+
+      {/* Interactive Tech Consult Booking Modal */}
+      <ConsultModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 }
