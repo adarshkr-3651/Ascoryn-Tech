@@ -8,7 +8,7 @@ import DirectAccessCard from './direct-access-card';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen lg:min-h-[720px] lg:h-screen lg:max-h-[920px] pt-20 sm:pt-24 lg:pt-16 pb-10 lg:pb-0 flex items-center justify-center overflow-hidden bg-slate-50 dark:bg-[#070D1B] transition-colors duration-300">
+    <section className="relative pt-24 pb-12 lg:pt-24 lg:pb-16 overflow-hidden bg-slate-50 dark:bg-[#070D1B] transition-colors duration-300">
       {/* Interactive Floating Circuit Canvas Background */}
       <CircuitCanvas />
 
