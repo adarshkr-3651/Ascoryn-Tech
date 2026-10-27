@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { TECH_STACK } from '@/lib/data';
-import { Code, Terminal, Cpu, Globe, Server, Database, Brain, Layers, Box, Shield, GitBranch, Sparkles } from 'lucide-react';
+import { Code, Terminal, Cpu, Globe, Server, Database, Brain, Layers, Box, Shield, GitBranch, Sparkles, Landmark } from 'lucide-react';
 
 const techIconMap: Record<string, React.ReactNode> = {
   Globe: <Globe className="w-5 h-5 text-cyan-600 dark:text-cyan-400" />,
@@ -19,12 +19,13 @@ const techIconMap: Record<string, React.ReactNode> = {
   Box: <Box className="w-5 h-5 text-blue-600 dark:text-blue-400" />,
   GitBranch: <GitBranch className="w-5 h-5 text-lime-600 dark:text-lime-500" />,
   Shield: <Shield className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />,
+  Landmark: <Landmark className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />,
 };
 
 export default function TechStackSection() {
   const [activeCategory, setActiveCategory] = useState<string>('All');
 
-  const categories = ['All', 'Frontend', 'Backend & Cloud', 'AI & Data', 'DevOps & Cyber'];
+  const categories = ['All', 'Full Stack', 'AI & Automations', 'Fintech', 'Cloud DevOps'];
 
   const filteredTech = activeCategory === 'All'
     ? TECH_STACK

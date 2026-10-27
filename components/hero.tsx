@@ -40,7 +40,7 @@ export default function Hero() {
               <Sparkles className="w-3.5 h-3.5 text-lime-600 dark:text-lime-400" />
               <span>INNOVATING FOR TOMORROW</span>
               <span className="text-slate-300 dark:text-slate-600">|</span>
-              <span className="text-slate-700 dark:text-slate-300">Enterprise AI, Full-Stack, Cloud & DevOps</span>
+              <span className="text-slate-700 dark:text-slate-300">Full-Stack • AI & Automations • FinTech • Cloud DevOps</span>
             </div>
 
             {/* Main Headline */}
@@ -51,7 +51,7 @@ export default function Hero() {
 
             {/* Body Description */}
             <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 font-normal leading-relaxed max-w-xl mb-6 transition-colors">
-              Ascoryn Tech delivers high-velocity custom software, autonomous AI systems, scalable multi-cloud infrastructure, and advanced FinTech solutions engineered for market leaders.
+              Ascoryn Tech delivers high-velocity Full-Stack software engineering, autonomous AI & automations, institutional FinTech systems, and enterprise Cloud DevOps infrastructure.
             </p>
 
             {/* CTA Group */}
@@ -73,19 +73,23 @@ export default function Hero() {
               </a>
             </div>
 
-            {/* Trust Badges */}
-            <div className="flex flex-wrap items-center gap-6 sm:gap-8 pt-4 border-t border-slate-200 dark:border-slate-800/80 w-full transition-colors">
-              <div className="flex items-center gap-2 text-slate-700 dark:text-slate-300 text-xs font-medium">
-                <CheckCircle2 className="w-4 h-4 text-lime-600 dark:text-lime-400 shrink-0" />
-                <span>Enterprise-Grade Architecture</span>
+            {/* Trust Badges - 4 Pillars */}
+            <div className="flex flex-wrap items-center gap-4 sm:gap-6 pt-4 border-t border-slate-200 dark:border-slate-800/80 w-full transition-colors text-xs font-medium">
+              <div className="flex items-center gap-1.5 text-slate-700 dark:text-slate-300">
+                <CheckCircle2 className="w-3.5 h-3.5 text-lime-600 dark:text-lime-400 shrink-0" />
+                <span>Full-Stack Engineering</span>
               </div>
-              <div className="flex items-center gap-2 text-slate-700 dark:text-slate-300 text-xs font-medium">
-                <ShieldCheck className="w-4 h-4 text-cyan-600 dark:text-cyan-400 shrink-0" />
-                <span>Bank-Grade Security</span>
+              <div className="flex items-center gap-1.5 text-slate-700 dark:text-slate-300">
+                <Sparkles className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400 shrink-0" />
+                <span>AI & Automations</span>
               </div>
-              <div className="flex items-center gap-2 text-slate-700 dark:text-slate-300 text-xs font-medium">
-                <Zap className="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0" />
-                <span>99.99% SLA Uptime</span>
+              <div className="flex items-center gap-1.5 text-slate-700 dark:text-slate-300">
+                <ShieldCheck className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400 shrink-0" />
+                <span>FinTech Bank-Grade Core</span>
+              </div>
+              <div className="flex items-center gap-1.5 text-slate-700 dark:text-slate-300">
+                <Zap className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400 shrink-0" />
+                <span>99.99% Cloud DevOps SLA</span>
               </div>
             </div>
           </div>

@@ -20,7 +20,7 @@ export default function Footer() {
           <div className="lg:col-span-4 space-y-4">
             <AscorynLogo size="lg" />
             <p className="text-sm text-slate-600 dark:text-slate-300 max-w-sm leading-relaxed mt-3 transition-colors">
-              Ascoryn Tech delivers high-velocity enterprise software development, autonomous AI agent pipelines, multi-cloud architecture, and advanced FinTech solutions.
+              Ascoryn Tech delivers high-velocity Full-Stack software engineering, autonomous AI & automations, institutional FinTech systems, and multi-cloud DevOps architecture.
             </p>
 
             {/* Direct Contact Summary */}
@@ -104,13 +104,13 @@ export default function Footer() {
 
           {/* Capabilities Links (2 cols) */}
           <div className="lg:col-span-2">
-            <h4 className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-4">Capabilities</h4>
+            <h4 className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-4">Enterprise Model</h4>
             <ul className="space-y-2.5 text-xs">
-              <li><a href="#services" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">AI & LLM Automation</a></li>
-              <li><a href="#services" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Cloud Architecture</a></li>
-              <li><a href="#services" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Custom Next.js Apps</a></li>
-              <li><a href="#services" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">FinTech Core Systems</a></li>
-              <li><a href="#services" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Real-Time Data BI</a></li>
+              <li><a href="#services" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Full-Stack Software</a></li>
+              <li><a href="#services" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">AI & Automations</a></li>
+              <li><a href="#services" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">FinTech Core Banking</a></li>
+              <li><a href="#services" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Cloud DevOps & SRE</a></li>
+              <li><a href="#services" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">UI/UX Design Systems</a></li>
             </ul>
           </div>
 

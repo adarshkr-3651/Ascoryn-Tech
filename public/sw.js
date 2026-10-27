@@ -1,5 +1,5 @@
 // Ascoryn Tech Service Worker - High-Performance Local Asset Caching
-const CACHE_NAME = 'ascoryn-cache-v1';
+const CACHE_NAME = 'ascoryn-cache-v2';
 const STATIC_ASSETS = [
   '/',
   '/logo.png',

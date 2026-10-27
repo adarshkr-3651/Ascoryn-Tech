@@ -28,7 +28,7 @@ export default function ContactSection() {
     name: '',
     email: '',
     company: '',
-    service: 'AI & Automation',
+    service: 'Full-Stack',
     budget: 'Rs. 10,000 - 25,000',
     message: '',
   });
@@ -142,7 +142,7 @@ export default function ContactSection() {
                           name: '',
                           email: '',
                           company: '',
-                          service: 'AI & Automation',
+                          service: 'Full-Stack',
                           budget: 'Rs. 10,000 - 25,000',
                           message: '',
                         });
@@ -210,9 +210,10 @@ export default function ContactSection() {
                         onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                         className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white text-sm focus:outline-none focus:border-cyan-500 transition-colors"
                       >
-                        <option value="AI & Automation">AI & LLM Automation</option>
-                        <option value="Cloud Architecture">Cloud & DevOps</option>
-                        <option value="Custom SaaS">Full-Stack</option>
+                        <option value="Full-Stack">Full-Stack Enterprise Software</option>
+                        <option value="AI & Automations">AI & Intelligent Automations</option>
+                        <option value="FinTech">FinTech Core & Asset Solutions</option>
+                        <option value="Cloud DevOps">Cloud DevOps & SRE Architecture</option>
                       </select>
                     </div>
 

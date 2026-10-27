@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Calculator, Check, ArrowRight, TrendingUp, ShieldCheck } from 'lucide-react';
 
 export default function CostCalculator() {
-  const [goal, setGoal] = useState<'ai' | 'app' | 'cloud' | 'security'>('ai');
+  const [goal, setGoal] = useState<'app' | 'ai' | 'fintech' | 'cloud'>('app');
   const [tier, setTier] = useState<'mvp' | 'growth' | 'enterprise'>('growth');
   const [speed, setSpeed] = useState<'standard' | 'accelerated' | 'blitz'>('accelerated');
   const [selectedAddons, setSelectedAddons] = useState<string[]>(['sre', 'soc2']);
@@ -19,10 +19,10 @@ export default function CostCalculator() {
 
   // Base Calculation Logic (in NPR / Rs.)
   const goalRates = {
-    ai: { base: 120000, label: 'AI Agent & LLM Automation', roi: '350% Efficiency Increase' },
-    app: { base: 150000, label: 'Next.js Custom SaaS App', roi: '3x Speed to Market' },
-    cloud: { base: 180000, label: 'Cloud Architecture & DevOps', roi: '45% Infra Cost Cut' },
-    security: { base: 100000, label: 'FinTech Compliance Audit', roi: '100% Audit Compliance' },
+    app: { base: 150000, label: 'Full-Stack Enterprise Software', roi: '3x Speed to Market' },
+    ai: { base: 140000, label: 'AI & Intelligent Automations', roi: '350% Efficiency Increase' },
+    fintech: { base: 180000, label: 'FinTech Core & Asset Engine', roi: 'Sub-Second Settlement' },
+    cloud: { base: 160000, label: 'Cloud DevOps Architecture & SRE', roi: '45% Infra Cost Cut' },
   };
 
   const tierMultipliers = {
@@ -80,7 +80,7 @@ export default function CostCalculator() {
                 1. Select Core Primary Goal
               </label>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {(['ai', 'app', 'cloud', 'security'] as const).map((key) => (
+                {(['app', 'ai', 'fintech', 'cloud'] as const).map((key) => (
                   <button
                     key={key}
                     onClick={() => setGoal(key)}

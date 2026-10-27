@@ -4,7 +4,7 @@ export interface Service {
   shortDesc: string;
   fullDesc: string;
   iconName: string;
-  category: 'AI & Data' | 'Cloud & Engineering' | 'FinTech Solutions';
+  category: 'Full Stack' | 'AI & Automations' | 'Fintech' | 'Cloud DevOps';
   metrics: string;
   features: string[];
   gradient: string;
@@ -27,7 +27,7 @@ export interface CaseStudy {
 
 export interface TechItem {
   name: string;
-  category: 'Frontend' | 'Backend & Cloud' | 'AI & Data' | 'DevOps & Cyber';
+  category: 'Full Stack' | 'AI & Automations' | 'Fintech' | 'Cloud DevOps';
   icon: string;
   proficiency: number;
   popularFor: string;
@@ -53,107 +53,148 @@ export interface CoreValue {
 }
 
 export const SERVICES: Service[] = [
-  {
-    id: 'ai-automation',
-    title: 'AI & Intelligent Automation',
-    shortDesc: 'Harness LLMs, autonomous agents, and predictive machine learning models tailored for enterprise scale.',
-    fullDesc: 'We architect enterprise-grade AI solutions that automate complex operational workflows, power intelligent customer agents, and deliver real-time predictive insights with strict security guardrails.',
-    iconName: 'Cpu',
-    category: 'AI & Data',
-    metrics: '10x Faster Process Execution',
-    features: [
-      'Custom LLM Fine-Tuning & RAG Pipelines',
-      'Autonomous Workflow & Task Agents',
-      'Predictive Analytics & Forecasting Models',
-      'Computer Vision & Automated Document Parsing',
-      'Enterprise Guardrails & Ethical AI Safety'
-    ],
-    gradient: 'from-cyan-500 via-blue-600 to-lime-500'
-  },
-  {
-    id: 'cloud-transformation',
-    title: 'Cloud Architecture & DevOps',
-    shortDesc: 'Scale seamlessly with multi-cloud infrastructure, microservices, and automated Zero-Downtime CI/CD.',
-    fullDesc: 'Our cloud architects design resilient, auto-scaling environments across AWS, GCP, and Azure. We optimize cloud spend, eliminate infrastructure bottlenecks, and enforce continuous delivery.',
-    iconName: 'CloudLightning',
-    category: 'Cloud & Engineering',
-    metrics: '99.99% Guaranteed Availability',
-    features: [
-      'Kubernetes & Serverless Microservices',
-      'Infrastructure as Code (Terraform / Pulumi)',
-      'Multi-Cloud Disaster Recovery Systems',
-      'Cost Optimization & FinOps Management',
-      '24/7 SRE Monitoring & Automated Remediation'
-    ],
-    gradient: 'from-blue-600 via-cyan-500 to-lime-400'
-  },
+  // 1. Full Stack Pillar
   {
     id: 'custom-software',
     title: 'Full-Stack Enterprise Software',
     shortDesc: 'Custom Web & Mobile applications engineered for high performance, intuitive UX, and rapid scalability.',
-    fullDesc: 'From high-throughput FinTech platforms to internal operations suites, we build robust, pixel-perfect digital products leveraging Next.js, Node.js, Python, and scalable databases.',
+    fullDesc: 'From high-throughput SaaS suites to enterprise customer portals, we engineer pixel-perfect, scalable digital products leveraging Next.js, Node.js, Python, Go, and resilient database architectures.',
     iconName: 'Code2',
-    category: 'Cloud & Engineering',
+    category: 'Full Stack',
     metrics: '3x Speed-to-Market Delivery',
     features: [
-      'Next.js & React High-Performance Web Apps',
+      'Next.js 15 & React 19 Server Components',
       'Cross-Platform Mobile Apps (iOS & Android)',
-      'High-Throughput API Gateway Architectures',
+      'High-Throughput GraphQL & REST API Gateways',
       'Real-Time WebSocket & Event-Driven Systems',
-      'Legacy Code Modernization & Migration'
+      'Legacy Modernization & Cloud Migrations'
     ],
     gradient: 'from-cyan-400 via-lime-500 to-blue-600'
   },
   {
-    id: 'fintech-management-systems',
-    title: 'FinTech Portfolio & Wealth Management',
-    shortDesc: 'Enterprise platforms for real-time portfolio tracking, asset management, and financial reconciliation.',
-    fullDesc: 'We build secure FinTech management systems that provide high-fidelity tracking of digital assets, algorithmic portfolio rebalancing, and automated ledger reconciliation for asset managers.',
-    iconName: 'Landmark',
-    category: 'FinTech Solutions',
-    metrics: 'Real-Time Asset Tracking',
+    id: 'digital-product-ux',
+    title: 'UI/UX & Design Systems',
+    shortDesc: 'Deliver immersive, accessible, and conversion-optimized digital experiences tailored to human needs.',
+    fullDesc: 'Our product designers create comprehensive tokenized design systems, interactive prototypes, and frictionless user journeys that maximize product adoption and conversion.',
+    iconName: 'Layout',
+    category: 'Full Stack',
+    metrics: '45% Conversion Lift',
     features: [
-      'Real-Time Portfolio & Asset Tracking',
-      'Algorithmic Wealth Rebalancing',
-      'Automated Ledger Reconciliation',
-      'Secure Digital Wallets & Custody',
-      'Compliance-Ready Reporting Dashboards'
+      'Design System Creation & Tokenized UI Libraries',
+      'Interactive Prototyping & Usability Audits',
+      'WCAG 2.1 AA Accessibility Standards',
+      'Conversion-Optimized Customer Flows',
+      'Micro-Interactions & Fluid Animations'
+    ],
+    gradient: 'from-lime-400 via-blue-600 to-cyan-500'
+  },
+
+  // 2. AI & Automations Pillar
+  {
+    id: 'ai-automation',
+    title: 'AI & Intelligent Automations',
+    shortDesc: 'Deploy autonomous agents, multi-model LLM pipelines, and end-to-end intelligent workflow automations.',
+    fullDesc: 'We architect enterprise-grade AI solutions that automate complex multi-department workflows, power autonomous reasoning agents, and deliver real-time predictive insights with enterprise guardrails.',
+    iconName: 'Cpu',
+    category: 'AI & Automations',
+    metrics: '10x Faster Process Execution',
+    features: [
+      'Custom LLM Fine-Tuning & Multi-Agent Systems',
+      'Autonomous Workflow & Robotic Task Agents',
+      'Predictive Analytics & Forecasting Models',
+      'Computer Vision & Automated Document Parsing',
+      'Enterprise Safety Guardrails & Ethical AI'
+    ],
+    gradient: 'from-cyan-500 via-blue-600 to-lime-500'
+  },
+  {
+    id: 'enterprise-rag-pipelines',
+    title: 'Enterprise RAG & Knowledge Systems',
+    shortDesc: 'Turn unstructured internal data into instant, verified cognitive intelligence for your entire workforce.',
+    fullDesc: 'Build high-speed semantic retrieval-augmented generation (RAG) engines integrated with vector databases, ensuring zero hallucination and strict multi-tenant access control.',
+    iconName: 'Brain',
+    category: 'AI & Automations',
+    metrics: '99.2% Retrieval Precision',
+    features: [
+      'Hybrid Dense/Sparse Vector Search Pipelines',
+      'Automated OCR & Data Ingestion Workflows',
+      'Role-Based Context Permissions & Audit Logs',
+      'Local & Air-Gapped Private LLM Deployments',
+      'Continuous RAG Evaluation & Latency Tuning'
+    ],
+    gradient: 'from-teal-500 via-cyan-500 to-blue-600'
+  },
+
+  // 3. Fintech Pillar
+  {
+    id: 'fintech-management-systems',
+    title: 'FinTech Core & Asset Management',
+    shortDesc: 'Enterprise platforms for real-time portfolio tracking, multi-asset ledgers, and financial reconciliation.',
+    fullDesc: 'We build secure FinTech management architectures that provide high-fidelity tracking of digital assets, algorithmic rebalancing, automated double-entry ledger reconciliation, and regulatory compliance.',
+    iconName: 'Landmark',
+    category: 'Fintech',
+    metrics: 'Sub-Second Asset Settlement',
+    features: [
+      'Real-Time Portfolio & Asset Valuation Engine',
+      'Algorithmic Wealth Rebalancing Systems',
+      'Double-Entry Automated Ledger Reconciliation',
+      'Encrypted Digital Wallets & Custody Integration',
+      'Central Bank & Regulatory Audit Reporting'
     ],
     gradient: 'from-blue-600 via-indigo-500 to-purple-600'
   },
   {
     id: 'fintech-data-ai',
-    title: 'Financial AI & Predictive Analytics',
-    shortDesc: 'Unlock institutional wealth insights with predictive ML, risk scoring, and algorithmic models.',
-    fullDesc: 'Empower financial institutions with advanced AI workflows for dynamic risk assessment, credit scoring, algorithmic trading, and personalized wealth management assistants.',
+    title: 'Financial AI, Fraud & Risk Scoring',
+    shortDesc: 'Mitigate risk with sub-second ML fraud detection, dynamic credit scoring, and algorithmic models.',
+    fullDesc: 'Empower financial institutions with advanced AI workflows for dynamic credit evaluation, real-time transaction fraud filtering, automated KYC/AML checks, and predictive market intelligence.',
     iconName: 'Wallet',
-    category: 'FinTech Solutions',
-    metrics: 'Sub-Second Risk Scoring',
+    category: 'Fintech',
+    metrics: '< 45ms Fraud Interception',
     features: [
-      'Algorithmic Trading & Quants ML',
-      'Dynamic Credit Risk Models',
-      'AI-Powered Wealth Management',
-      'KYC/AML Automation Pipelines',
-      'Real-Time Market Data Streaming'
+      'Sub-Second Transaction Fraud Detection',
+      'Dynamic Credit Risk & Underwriting Models',
+      'Automated KYC / AML Compliance Pipelines',
+      'Algorithmic Quants & Backtesting Engines',
+      'Real-Time Market Data Ingestion & Streaming'
     ],
     gradient: 'from-teal-500 via-emerald-500 to-lime-500'
   },
+
+  // 4. Cloud DevOps Pillar
   {
-    id: 'digital-product-ux',
-    title: 'UI/UX & Product Design System',
-    shortDesc: 'Deliver immersive, accessible, and conversion-optimized digital experiences tailored to human needs.',
-    fullDesc: 'Our design strategists craft comprehensive design systems, interactive prototypes, and frictionless user flows that maximize engagement and delight users.',
-    iconName: 'Layout',
-    category: 'Cloud & Engineering',
-    metrics: '45% Conversion Lift',
+    id: 'cloud-transformation',
+    title: 'Multi-Cloud Architecture (AWS, GCP, Azure)',
+    shortDesc: 'Scale seamlessly with multi-cloud infrastructure, Kubernetes orchestration, and automated CI/CD.',
+    fullDesc: 'Our certified cloud architects design resilient, auto-scaling environments across AWS, GCP, and Azure. We optimize cloud spend, eliminate infrastructure bottlenecks, and enforce continuous delivery.',
+    iconName: 'CloudLightning',
+    category: 'Cloud DevOps',
+    metrics: '99.99% Guaranteed Availability',
     features: [
-      'Design System Creation & UI Kit Libraries',
-      'Figma Interactive Prototyping & Wireframing',
-      'User Journey Mapping & Usability Audits',
-      'WCAG 2.1 AA Accessibility Compliance',
-      'Micro-Interactions & Animation Design'
+      'Kubernetes & Serverless Container Orchestration',
+      'Infrastructure as Code (Terraform / Pulumi)',
+      'Multi-Region Disaster Recovery & Geo-Routing',
+      'FinOps Cloud Cost Optimization (30-50% Savings)',
+      'Automated Zero-Downtime Deployment Pipelines'
     ],
-    gradient: 'from-lime-400 via-blue-600 to-cyan-500'
+    gradient: 'from-blue-600 via-cyan-500 to-lime-400'
+  },
+  {
+    id: 'sre-devops-automation',
+    title: 'Cloud DevOps & 24/7 SRE Monitoring',
+    shortDesc: 'Enterprise-grade reliability engineering, automated incident response, and continuous compliance.',
+    fullDesc: 'We implement automated CI/CD pipelines, container security, distributed tracing, and 24/7 site reliability engineering (SRE) to ensure your mission-critical systems never fail.',
+    iconName: 'Shield',
+    category: 'Cloud DevOps',
+    metrics: '< 15min Mean Time to Detect',
+    features: [
+      '24/7 SRE Monitoring & Automated Self-Healing',
+      'GitHub Actions & GitLab CI/CD Workflows',
+      'Distributed Tracing (OpenTelemetry & Datadog)',
+      'Automated Vulnerability & Container Scanning',
+      'SOC2, ISO 27001 & PCI-DSS Cloud Hardening'
+    ],
+    gradient: 'from-indigo-600 via-blue-500 to-cyan-400'
   }
 ];
 
@@ -233,25 +274,33 @@ export const CASE_STUDIES: CaseStudy[] = [
 ];
 
 export const TECH_STACK: TechItem[] = [
-  { name: 'Next.js 15', category: 'Frontend', icon: 'Globe', proficiency: 98, popularFor: 'Server Components & SEO Performance' },
-  { name: 'React 19', category: 'Frontend', icon: 'Atom', proficiency: 96, popularFor: 'Component Architecture' },
-  { name: 'TypeScript', category: 'Frontend', icon: 'Code', proficiency: 99, popularFor: 'Type-Safe Clean Code' },
-  { name: 'Tailwind CSS', category: 'Frontend', icon: 'Palette', proficiency: 98, popularFor: 'Modern Dynamic Styling' },
-  { name: 'Node.js & Express', category: 'Backend & Cloud', icon: 'Server', proficiency: 95, popularFor: 'Scalable Microservices' },
-  { name: 'Python & FastAPI', category: 'Backend & Cloud', icon: 'Terminal', proficiency: 96, popularFor: 'AI/ML & High-Speed APIs' },
-  { name: 'Go (Golang)', category: 'Backend & Cloud', icon: 'Cpu', proficiency: 92, popularFor: 'Ultra-Low Latency Systems' },
-  { name: 'AWS & GCP Cloud', category: 'Backend & Cloud', icon: 'Cloud', proficiency: 97, popularFor: 'Enterprise Infrastructure' },
-  { name: 'PyTorch & OpenAI API', category: 'AI & Data', icon: 'Brain', proficiency: 94, popularFor: 'LLM Fine-Tuning & Agents' },
-  { name: 'PostgreSQL & Redis', category: 'AI & Data', icon: 'Database', proficiency: 97, popularFor: 'Relational & In-Memory Storage' },
-  { name: 'Pinecone / Vector DB', category: 'AI & Data', icon: 'Layers', proficiency: 93, popularFor: 'Semantic RAG Search' },
-  { name: 'Docker & Kubernetes', category: 'DevOps & Cyber', icon: 'Box', proficiency: 95, popularFor: 'Container Orchestration' },
-  { name: 'Terraform & CI/CD', category: 'DevOps & Cyber', icon: 'GitBranch', proficiency: 96, popularFor: 'Automated Deployment' },
-  { name: 'GitHub Actions', category: 'DevOps & Cyber', icon: 'GitBranch', proficiency: 97, popularFor: 'Automated Workflows' },
-  { name: 'Apache Kafka', category: 'Backend & Cloud', icon: 'Layers', proficiency: 94, popularFor: 'Event-Driven Streaming' },
-  { name: 'AWS Lambda (Serverless)', category: 'Backend & Cloud', icon: 'Cloud', proficiency: 96, popularFor: 'Auto-Scaling Functions' },
-  { name: 'MongoDB & NoSQL', category: 'AI & Data', icon: 'Database', proficiency: 95, popularFor: 'Flexible Document Storage' },
-  { name: 'GraphQL & Apollo', category: 'Frontend', icon: 'Atom', proficiency: 93, popularFor: 'Dynamic API Queries' },
-  { name: 'FinTech Compliance Guard', category: 'DevOps & Cyber', icon: 'Shield', proficiency: 98, popularFor: 'Bank-Grade Compliance' }
+  // Full Stack
+  { name: 'Next.js 15', category: 'Full Stack', icon: 'Globe', proficiency: 98, popularFor: 'Server Components & High-Speed SEO' },
+  { name: 'React 19', category: 'Full Stack', icon: 'Atom', proficiency: 96, popularFor: 'Modern Responsive Component Architecture' },
+  { name: 'TypeScript', category: 'Full Stack', icon: 'Code', proficiency: 99, popularFor: 'Type-Safe Robust Enterprise Code' },
+  { name: 'Tailwind CSS', category: 'Full Stack', icon: 'Palette', proficiency: 98, popularFor: 'High-Performance Modern Styling' },
+  { name: 'Node.js & Express', category: 'Full Stack', icon: 'Server', proficiency: 95, popularFor: 'High-Concurrency Microservices' },
+  { name: 'Python & FastAPI', category: 'Full Stack', icon: 'Terminal', proficiency: 96, popularFor: 'Asynchronous High-Speed Backend APIs' },
+
+  // AI & Automations
+  { name: 'PyTorch & OpenAI API', category: 'AI & Automations', icon: 'Brain', proficiency: 95, popularFor: 'LLM Fine-Tuning & Multi-Agent Workflows' },
+  { name: 'LangChain & Agentic AI', category: 'AI & Automations', icon: 'Cpu', proficiency: 94, popularFor: 'Autonomous Task Automation Pipelines' },
+  { name: 'Pinecone & Vector DBs', category: 'AI & Automations', icon: 'Layers', proficiency: 93, popularFor: 'Semantic RAG Knowledge Retrieval' },
+  { name: 'Automated OCR & Vision', category: 'AI & Automations', icon: 'Brain', proficiency: 92, popularFor: 'Intelligent Document & Media Processing' },
+
+  // Fintech
+  { name: 'FinTech Core Ledger API', category: 'Fintech', icon: 'Landmark', proficiency: 98, popularFor: 'Double-Entry Real-Time Settlement' },
+  { name: 'Apache Kafka Event Streams', category: 'Fintech', icon: 'Layers', proficiency: 95, popularFor: 'Low-Latency High-Volume Financial Queues' },
+  { name: 'Real-Time Fraud Guard', category: 'Fintech', icon: 'Shield', proficiency: 97, popularFor: 'Sub-Second Anomaly & Transaction Scoring' },
+  { name: 'Bank-Grade AES-256 HSM', category: 'Fintech', icon: 'Shield', proficiency: 99, popularFor: 'Encrypted Vault & Custody Infrastructure' },
+
+  // Cloud DevOps
+  { name: 'AWS, GCP & Azure Cloud', category: 'Cloud DevOps', icon: 'Cloud', proficiency: 97, popularFor: 'Multi-Region High-Availability Infrastructure' },
+  { name: 'Docker & Kubernetes (K8s)', category: 'Cloud DevOps', icon: 'Box', proficiency: 96, popularFor: 'Auto-Scaling Container Orchestration' },
+  { name: 'Terraform & Pulumi IaC', category: 'Cloud DevOps', icon: 'GitBranch', proficiency: 96, popularFor: 'Declarative Reproducible Cloud Architecture' },
+  { name: 'GitHub Actions CI/CD', category: 'Cloud DevOps', icon: 'GitBranch', proficiency: 97, popularFor: 'Zero-Downtime Automated Deployments' },
+  { name: 'PostgreSQL & Redis Cluster', category: 'Cloud DevOps', icon: 'Database', proficiency: 98, popularFor: 'In-Memory Caching & Relational Sharding' },
+  { name: '24/7 SRE & OpenTelemetry', category: 'Cloud DevOps', icon: 'Shield', proficiency: 95, popularFor: 'Distributed Tracing & Automated Self-Healing' }
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
@@ -289,30 +338,30 @@ export const TESTIMONIALS: Testimonial[] = [
 
 export const CORE_VALUES: CoreValue[] = [
   {
-    title: 'Future-Driven Innovation',
-    subtitle: 'Always ahead of the curve',
-    description: 'We integrate cutting-edge AI, cloud, and modern web frameworks to give our clients an unbeatable competitive advantage.',
+    title: 'Full-Stack Velocity',
+    subtitle: 'Modern Engineering',
+    description: 'We build scalable, pixel-perfect, type-safe full-stack software with Next.js, reactive microservices, and continuous delivery.',
     icon: 'Sparkles',
     accent: 'from-cyan-400 to-blue-600'
   },
   {
-    title: 'Precision & Velocity',
-    subtitle: 'High-speed, zero-bug delivery',
-    description: 'Engineering excellence is non-negotiable. We build scalable, type-safe software with continuous integration and clean architecture.',
+    title: 'Autonomous AI Innovation',
+    subtitle: 'Intelligent Automations',
+    description: 'We deploy cutting-edge AI agents, fine-tuned LLMs, and automated workflow pipelines that give enterprises an unfair advantage.',
     icon: 'Zap',
     accent: 'from-blue-600 to-lime-400'
   },
   {
-    title: 'Uncompromising Trust',
-    subtitle: 'Security & compliance first',
-    description: 'Your enterprise assets, IP, and customer data are safeguarded with bank-grade security architecture and encryption.',
+    title: 'Institutional FinTech Security',
+    subtitle: 'Bank-Grade Trust',
+    description: 'Your assets, transactions, and user data are protected with bank-grade encryption, double-entry ledgers, and zero-trust policies.',
     icon: 'Shield',
     accent: 'from-lime-400 to-emerald-600'
   },
   {
-    title: 'Client Growth Acceleration',
-    subtitle: 'Measurable impact',
-    description: 'We don’t just write code; we drive ROI, boost throughput, and ensure long-term tech sustainability.',
+    title: 'Cloud DevOps & SRE Resilience',
+    subtitle: '99.99% Availability',
+    description: 'Multi-cloud Kubernetes infrastructure, automated Terraform CI/CD, and 24/7 reliability engineering that scale on demand.',
     icon: 'TrendingUp',
     accent: 'from-emerald-500 to-cyan-400'
   }
@@ -325,22 +374,25 @@ export const COMPANY_STATS = [
   { label: 'In-House Tech Experts', value: '12+' }
 ];
 
-
 export const FAQS = [
   {
-    question: 'How quickly can Ascoryn Tech start our project?',
-    answer: 'We can assemble a dedicated team of specialist architects, software engineers, and designers within 3 to 5 business days following initial consultation and scope alignment.'
+    question: 'What are Ascoryn Tech’s core enterprise capabilities?',
+    answer: 'Ascoryn Tech specializes in four foundational pillars: Full-Stack Enterprise Software (Next.js, React, Node, Python), Autonomous AI & Workflow Automations (LLM fine-tuning, multi-agent systems, RAG), FinTech Core Systems (real-time payment settlement, wealth asset management, sub-second fraud detection), and Multi-Cloud DevOps (AWS, GCP, Kubernetes, Terraform IaC, and 24/7 SRE monitoring).'
   },
   {
-    question: 'Does Ascoryn Tech provide post-launch support and SRE monitoring?',
-    answer: 'Yes! We offer 24/7 SRE monitoring, automated incident resolution, security patching, and ongoing feature development SLAs to keep your systems running flawlessly.'
+    question: 'How quickly can Ascoryn Tech launch our project?',
+    answer: 'We can deploy a dedicated squad of senior software architects, AI engineers, and DevOps specialists within 3 to 5 business days following scope alignment and technical audit.'
   },
   {
-    question: 'How does Ascoryn Tech ensure data security and compliance?',
-    answer: 'We implement bank-grade security principles, end-to-end encryption in transit and at rest, automated security scanning, and assist with SOC2, ISO27001, and HIPAA compliance verification.'
+    question: 'How does Ascoryn Tech safeguard financial data and AI compliance?',
+    answer: 'We adhere to institutional bank-grade security standards: AES-256 encryption at rest, TLS 1.3 in transit, automated SOC2/ISO 27001 audit preparation, strict role-based access control (RBAC), and private/air-gapped LLM deployments to eliminate data leakage.'
   },
   {
-    question: 'Can you work with our existing in-house development team?',
-    answer: 'Absolutely. We regularly operate in hybrid augmented team models, co-engineering alongside your lead developers or taking ownership of key sub-systems.'
+    question: 'Do you provide continuous Cloud DevOps and 24/7 SRE monitoring?',
+    answer: 'Yes! We offer 24/7 Site Reliability Engineering (SRE) SLAs, automated incident self-healing, real-time distributed tracing, security patch automation, and proactive FinOps cloud cost optimization.'
+  },
+  {
+    question: 'Can you work with our in-house engineering team?',
+    answer: 'Absolutely. We operate in flexible engagement models: full turnkey product engineering, specialized sub-system delivery (e.g., adding an AI automation engine or FinTech ledger), or senior augmented co-engineering alongside your lead developers.'
   }
 ];

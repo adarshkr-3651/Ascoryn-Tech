@@ -2,21 +2,23 @@
 
 import React, { useState } from 'react';
 import { SERVICES, Service } from '@/lib/data';
-import { Cpu, CloudLightning, Code2, Landmark, Wallet, Layout, ArrowRight, CheckCircle2, Sparkles, X } from 'lucide-react';
+import { Cpu, CloudLightning, Code2, Landmark, Wallet, Layout, ArrowRight, CheckCircle2, Sparkles, X, Brain, Shield } from 'lucide-react';
 
 const iconMap: Record<string, React.ReactNode> = {
   Cpu: <Cpu className="w-7 h-7 text-cyan-600 dark:text-cyan-400" />,
+  Brain: <Brain className="w-7 h-7 text-lime-600 dark:text-lime-400" />,
   CloudLightning: <CloudLightning className="w-7 h-7 text-blue-600 dark:text-blue-400" />,
   Code2: <Code2 className="w-7 h-7 text-lime-600 dark:text-lime-400" />,
   Landmark: <Landmark className="w-7 h-7 text-indigo-600 dark:text-indigo-400" />,
   Wallet: <Wallet className="w-7 h-7 text-emerald-600 dark:text-emerald-400" />,
   Layout: <Layout className="w-7 h-7 text-cyan-600 dark:text-cyan-300" />,
+  Shield: <Shield className="w-7 h-7 text-indigo-600 dark:text-indigo-400" />,
 };
 
 export default function ServicesSection() {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [activeModalService, setActiveModalService] = useState<Service | null>(null);
-  const categories = ['All', 'AI & Data', 'Cloud & Engineering', 'FinTech Solutions'];
+  const categories = ['All', 'Full Stack', 'AI & Automations', 'Fintech', 'Cloud DevOps'];
 
   const filteredServices = selectedCategory === 'All'
     ? SERVICES

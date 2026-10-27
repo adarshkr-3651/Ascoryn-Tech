@@ -31,9 +31,10 @@ export default function AboutVisionSection() {
             </p>
             <div className="space-y-3">
               {[
-                'Deep domain expertise across FinTech, AI, HealthTech & Supply Chain',
-                'Senior-only staff of elite system architects & software engineers',
-                '100% transparent development with continuous delivery metrics',
+                'Full-Stack velocity with Next.js 15, React 19 & high-throughput APIs',
+                'Autonomous AI agents, enterprise RAG & intelligent workflow automation',
+                'Institutional FinTech security, real-time ledgers & compliance',
+                'Multi-cloud Kubernetes DevOps & 24/7 SRE reliability engineering',
               ].map((point, idx) => (
                 <div key={idx} className="flex items-center gap-3 text-slate-800 dark:text-slate-200 text-sm font-medium transition-colors">
                   <CheckCircle className="w-5 h-5 text-lime-600 dark:text-lime-400 shrink-0" />

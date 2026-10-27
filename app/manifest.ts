@@ -2,9 +2,9 @@ import type { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Ascoryn Tech | Enterprise AI & Cloud Engineering',
+    name: 'Ascoryn Tech | Full Stack, AI & Automations, FinTech & Cloud DevOps',
     short_name: 'Ascoryn Tech',
-    description: 'Enterprise AI pipelines, multi-cloud architecture, and full-stack software engineering.',
+    description: 'Enterprise Full-Stack software engineering, autonomous AI & automations, FinTech cores, and multi-cloud DevOps architecture.',
     start_url: '/',
     display: 'standalone',
     background_color: '#070D1B',

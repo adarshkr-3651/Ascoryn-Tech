@@ -168,7 +168,7 @@ export default function ConsultModal({ isOpen, onClose }: ConsultModalProps) {
                 Book a Tech Consult Session
               </h2>
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1">
-                Directly connect with our Senior Engineers to review architecture, AI pipelines, or technical strategy.
+                Directly connect with our Principal Engineers to review Full-Stack architecture, AI automations, FinTech systems, or Cloud DevOps strategy.
               </p>
             </div>
 

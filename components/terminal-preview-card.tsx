@@ -29,13 +29,13 @@ export default function TerminalPreviewCard() {
           </div>
 
           <div className="text-slate-400 leading-relaxed text-[11.5px]">
-            <span className="text-purple-400">import</span> &#123; FinTechCore, AICluster &#125; <span className="text-purple-400">from</span> <span className="text-emerald-400">&apos;@ascoryn/core&apos;</span>;
+            <span className="text-purple-400">import</span> &#123; FullStack, AIAgents, FinTechCore, CloudDevOps &#125; <span className="text-purple-400">from</span> <span className="text-emerald-400">&apos;@ascoryn/enterprise&apos;</span>;
             <br />
-            <span className="text-blue-400">const</span> system = <span className="text-purple-400">new</span> <span className="text-amber-300">FinTechCore</span>(&#123; throughput: <span className="text-cyan-400">&apos;100k req/sec&apos;</span> &#125;);
+            <span className="text-blue-400">const</span> cluster = <span className="text-purple-400">new</span> <span className="text-amber-300">EnterpriseCore</span>(&#123; throughput: <span className="text-cyan-400">&apos;100k req/sec&apos;</span> &#125;);
             <br />
-            <span className="text-slate-500">// Initializing Autonomous Ledger</span>
+            <span className="text-slate-500">// Autonomous AI &amp; FinTech Core Active</span>
             <br />
-            system.<span className="text-cyan-300">deployAutoScaling</span>(&#123; region: <span className="text-emerald-400">&apos;global&apos;</span> &#125;);
+            cluster.<span className="text-cyan-300">deployMultiCloud</span>(&#123; region: <span className="text-emerald-400">&apos;global&apos;</span>, sla: <span className="text-lime-400">&apos;99.999%&apos;</span> &#125;);
           </div>
 
           {/* Micro Metrics Dashboard inside Code Preview */}
